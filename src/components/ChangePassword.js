@@ -20,7 +20,7 @@ const ChangePassword = () => {
     onSubmit: async (values) => {
       try {
         const register = await axios.post(
-          `${API}/user/changepassword/${input.email}`,
+          `${API}/api/user/changepassword/${input.email}`,
           values
         );
         toast.success(register.data.message);

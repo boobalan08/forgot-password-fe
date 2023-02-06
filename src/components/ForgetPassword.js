@@ -17,7 +17,7 @@ function ForgetPassword() {
     onSubmit: async (values) => {
       userContextData.setmailid(values.email);
       try {
-        let mail = await axios.post(`${API}/user/sendmail`, values);
+        let mail = await axios.post(`${API}/api/user/sendmail`, values);
         if (mail.data) {
           toast.success(`${mail.data.message}`);
           navigate("/Verification");

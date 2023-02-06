@@ -24,7 +24,7 @@ function Verification() {
     },
     onSubmit: async (values) => {
       try {
-        const res = await axios.post(`${API}/user/verify`, values);
+        const res = await axios.post(`${API}/api/user/verify`, values);
         userContextData.setforgotUser(res.data);
         console.log(res);
         if (res.data) {

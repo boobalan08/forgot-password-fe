@@ -18,7 +18,7 @@ function Register() {
     onSubmit: async (values) => {
       try {
         setLoading(true);
-        const register = await axios.post(`${API}/user/signup`, values);
+        const register = await axios.post(`${API}/api/user/signup`, values);
         toast.success(register.data.message);
         navigate("/");
         setLoading(false);

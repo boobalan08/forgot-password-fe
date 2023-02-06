@@ -18,10 +18,22 @@ function LoginPage() {
       password: "",
     },
     onSubmit: async (values) => {
+      // const login = await fetch(`${API}/api/user/login`, {
+      //   mode: "no-cors",
+      //   method: "POST",
+      //   headers: { "Content-type": "application/json" },
+      //   body: JSON.stringify(values),
+      // });
+      // if (login.status === 401) {
+      //   console.log("Error");
+      // } else {
+      //   const result = await login.json();
+      //   localStorage.setItem("token", result.token);
+      //   navigate("/profile");
+      // }
       try {
         setLoading(true);
-        const login = await axios.post(`${API}/user/login`, values);
-        toast.success(login.data.message);
+        const login = await axios.post(`${API}/api/user/login`, values);
         console.log(login);
         if (login.data.token) {
           toast.success(login.data.message);
